@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --background-color: #f8f8f8;
+  --header-color: #eeeeee;
+  --gameboard-background: #bebebe;
+  --font: #474747;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font);
+  font-family: 'Work Sans', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-color);
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.main-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.info {
+  margin-top: 30px;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 474px;
+  height: 474px;
+  border: 2px solid white;
+  margin: 0px auto;
+  background-color: var(--background-color);
+  grid-gap: 10px;
+}
+
+.field {
+  height: 150px;
+  width: 150px;
+  border: 3px solid var(--font);
+  background-color: var(--background-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay.active {
+  display: block;
+}
+
+.end-modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in-out;
+}
+
+.end-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.restart-button {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  width: 60%;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 8px;
+  background-color: #bebebe;
+  cursor: pointer;
+}
+
+.end-message {
+  font-size: 22px;
+}
